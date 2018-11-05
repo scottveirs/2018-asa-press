@@ -5,7 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <meta name="viewport" content="width=1024, user-scalable=no">
 
-  <title>Orcasound at the 2018 Civic Hackathon</title>
+  <title>Orcasound press presentation and links</title>
 
   <!-- Required stylesheet -->
   <link rel="stylesheet" media="screen" href="core/deck.core.css">
@@ -40,13 +40,13 @@
 	      	<h2>Orcasound -- Listen for Whales</h2>
 	      	<img src="content/orca-ferry.png">
 	      	<h3>Scott and Val Veirs, Orcasound Hydrophone Network</h3>
-	      	<h4>Civic Hackathon, September 22, 2018</h4>
+	      	<h4>ASA, Victoria, BC, Nov 5-9, 2018
 	      	<div>
 	      		<audio controls>
 	            <source src="content/clear-calls-clicks.mp3" type="audio/mpeg">
 	      		</audio>
 			</div>
-	  		Slides at: <a href="http://orcasound.net/data/talks/2018-civichack-veirs">orcasound.net/data/talks/</a>
+	  		Slides at: <a href="http://orcasound.net/data/talks/2018-asa-press">orcasound.net/data/talks/</a>
   		</center>
     </section>
 
@@ -64,39 +64,96 @@
    	Thanks to all the backers of the <a href="https://www.kickstarter.com/projects/sveirs/orcasound-listen-for-whales">2017 Kickstarter</a>, plus our app key developers/designers to date:<br>
    	Paul Cretu, Skander Mzali, Steve Hicks, Tyler Crisafulli, Nóra Mészáros, and Liam Reese<br>
    	<center>
-   	<a href="http://dev.orcasound.net">Beta-test at dev.orcasound.net!</a>
+   	<h4><a href="http://live.orcasound.net">Listen for whales at live.orcasound.net!</a></h4>
 	</center>
 	</div>
+    </section>.
+
+    <section class="slide">
+      <h2>Potential impacts of noise on SRKWs</h2>
+      <table>
+        <tr>
+          <td>
+            <ul>
+              <li>PTS/TTS
+                <ol>
+                <li>What explosives were used during the capture era, and previously?
+                <li>Pile driving:
+                  <audio controls>
+                    <source src="content/sounds/pile-driving-5sec.mp3" type="audio/mpeg">
+                    <source src="content/sounds/pile-driving-5sec.ogg" type="audio/ogg">
+                  </audio>
+                <li>MFA sonar:<audio src="content/sounds/sonar-canadian.mp3" controls="true"></audio> (HMS Ottawa, 2012)
+                <li>Naval detonations:<audio src="content/sounds/detonation-dm211-2_06_2012.mp3" controls="true"></audio> (HMS Ottawa, 2012)
+                <li>Unidentified urban sounds:<audio src="content/sounds/bang-echo_seattle-aquarium.mp3" controls="true"></audio>
+                <li>Last Saturday's sperm whale passby:<audio src="vv-slides/audio/OS_3_31_2018_SpermWhale.wav" controls></audio>
+                </ol>
+              <li>Masking (mostly by vessels, and what we ususally focus upon)
+              <li>Stress (e.g. from lack of food &amp; chronic noise, affecting pregnancies?)
+              <li>Acoustic ecology (e.g. faint sounds of prey, or predators?)
+            </ul>
+          </td>
+          <td width="33%">
+            <img src="content/right-whale-stress-911-rolland+2012.png">
+            <li>Right whale stress fell after 9/11 decreased ship noise in 2001 (Rolland et al., 2012)
+            <li>Anthropogenic noise has reduced right whales’ habitat in Cape Cod Bay by as much as 80 percent -- C.Clark
+          </td>
+        </tr>
+      </table>
     </section>
 
     <section class="slide">
-      <h2>Orcasound hackathon challenges</h2>
-        <ul>
-        <li>Build new HTML5 version of orca call catalog (<a href="http://www.orcasound.net/FordOsborneVocabulary/_SouthernVocabularyTable.html">old version</a>)
-        	<ol>
-    		<li>Use ffmpeg to convert audio files (flac -> ogg + mp3)</li>
-    		<li>Use Python to generate spectrograms from audio data (ideally flac)</li>
-    		</ol>
+      <center>
+      <h2>We know: SRKWs respond to noise</h2>
+      <table>
+        <tr>
+        <td>2003: U.S. Navy uses sonar in Haro Strait with SRKW behavior change observed by Center for Whale Research</td>
+        <td></td>
+        </tr>
+		    <tr>
+		    <td width="50%"><img src="vv-slides/images/shoup.jpg" width="489" height="365" alt=""></td>
+		    <td width="50%"><img src="vv-slides/images/speakingUpGraph.png" width="489" height="365" alt=""></td>
+		    </tr>
+        <tr>
+          <td align="center"><audio src="content/sounds/sonar-shoup-2003.mp3" controls="true"></audio></td>
+          <td>2009: SRKWs "speak up" in noise from nearby boats (Holt, Noren, Veirs, Emmons & Veirs)</td>
+        </tr>
+      </table>
+      </center>
+      <p>
+    </section>
 
-        <li>Build training data set of killer whale signals for machine learning
-      		<ol>
-      		<li>Listen to <a href="http://www.orcasound.net/FordOsborneVocabulary/_SouthernVocabularyTable.html">expert's catalog of signals</a> (~40 types of "pulsed calls")</li>
-      		<li>Clip isolated, clear calls from <a href="http://orcasound.net/data/product/SRKW/greatest-hits/">continuous recordings of wild killer whales</a></li>
-      		</ol>
-        <li>Discuss and implement architecture for machine learning
-      		<ol>
-      		<li>Review existing data architecture and flow</li>
-      		<li>Adjust AWS security and set up hackathon participant access</li>
-      		<li>Access FLAC audio data in AWS S3 buckets</li>
-      		<li>Discuss and access EC2 Linux instance and other relevant services (e.g. Cloud9, Lambda?)</li>
-      		<li>Build out <a href="https://github.com/orcasound/orcadata">Orcadata Git repository</a>: a docker-based Python analysis environment, or ??</li>
-      		</ol>
-  		<li>Integrate machine learning approach and products into Orcasound app
-  			<ol>
-  				<li>Orientation to the app, audio data scheme, and <a href="https://github.com/orcasound/orcasite">Orcasite Git repository</a> (Backend is an Elixir app using the Phoenix framework. The Phoenix app serves a React app.)
-  				<li>Discuss how algorithmic and human detection (Activity button presses) and classification could work synergistically
-  				<li>Implement integration, including visualization and notifications (moderated or automated)
-        </ul>
+    <section class="slide">
+      <h2>Vessel noise can mask <b><u>both</u></b> calls &amp; clicks</h2>
+      <table>
+        <tr>
+          <td width="50%">
+            <h4>Frequencies of vessel noise overlap with SRKW hearing and signals</h4>
+            <img src="content/peerJ_RL.png">
+             Veirs, Veirs, & Wood (<a href="https://peerj.com/articles/1657/">2016, PeerJ</a>)
+         </td>
+         <td>
+           <h4>It's already too loud!</h4>
+           <ol>
+             <li> Communication space reduced: 75% for NRKWs (Miller+2006); 94-98% for SRKW by Haro ships (<a href="https://prezi.com/7r0hski1h_2l/masking-of-southern-resident-killer-whale-signals-by-commercial-ship-noise/?webgl=0">Veirs+2011</a>)
+             <li> Foraging space reduced 58-89% by Haro ships (<a href="https://prezi.com/7r0hski1h_2l/masking-of-southern-resident-killer-whale-signals-by-commercial-ship-noise/?webgl=0">Veirs+2011</a>)
+             <li> See also Holt, 2008 and Lacy+2017.
+          </ol>
+          <h4>We also know:</h4>
+          <ol>
+            <li> Ships dominate the Haro Strait soundscape
+            <li> Ships transit Haro ~20 times/day
+            <li> Boats elevate mean ambient noise levels ~2dB during summer
+         </ol>
+         </td>
+       </tr>
+     </table>
+     <p>
+     <h5 text-align="center">We have many options to "more than mitigate" vessel noise.</h5>
+    </section>
+
+
+    <section class="slide">
     </section>
 
     <!-- End slides. -->
